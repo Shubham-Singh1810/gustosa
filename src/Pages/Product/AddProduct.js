@@ -35,6 +35,7 @@ function AddProduct() {
     hsnCode: "",
     GTIN: "",
     shortDescription: "",
+    productApperence:[]
   });
   const [tags, setTags] = useState([]);
   const getTagListFunc = async () => {
@@ -134,6 +135,7 @@ function AddProduct() {
           GTIN: "",
           createdBy: "",
           createdByAdmin: "",
+          productApperence:[]
         });
         contentRef.current = "";
         setContent("");
@@ -240,6 +242,25 @@ function AddProduct() {
                       );
                     })}
                   </select>
+                </div>
+                <div className="col-6 mb-3">
+                  <label>Select Apperence</label>
+                  <Select
+                    isMulti
+                    options={[
+                      {label:"Best Seller", value:"Best Seller"},
+                      {label:"Latest", value:"Latest"},
+                      {label:"Popular", value:"Popular"}
+                    ]}
+                    onChange={(selectedOptions) =>
+                      setFormData({
+                        ...formData,
+                        productApperence: selectedOptions.map((option) => option.label), // only array of string IDs
+                      })
+                    }
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+                  />
                 </div>
                 <div className="col-6 mb-3">
                   <label>Category*</label>

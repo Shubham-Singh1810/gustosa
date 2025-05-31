@@ -246,12 +246,25 @@ function ProductUpdateStep2() {
                   </select>
                 </div>
                 <div className="col-12 d-flex ">
-                  <p className="py-1 px-3 me-2 bg-primary text-light rounded bedge">INR</p>
-                  <p className="py-1 px-3 me-2 bg-secondary text-light rounded bedge" style={{cursor:"pointer"}} onClick={()=>alert("Comming Soon")}>USD</p>
-                  <p className="py-1 px-3 me-2 bg-secondary text-light rounded bedge" style={{cursor:"pointer"}} onClick={()=>alert("Comming Soon")}>AED</p>
-                  
+                  <p className="py-1 px-3 me-2 bg-primary text-light rounded bedge">
+                    INR
+                  </p>
+                  <p
+                    className="py-1 px-3 me-2 bg-secondary text-light rounded bedge"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => alert("Comming Soon")}
+                  >
+                    USD
+                  </p>
+                  <p
+                    className="py-1 px-3 me-2 bg-secondary text-light rounded bedge"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => alert("Comming Soon")}
+                  >
+                    AED
+                  </p>
                 </div>
-                <div className="col-4 mb-3">
+                <div className="col-6 mb-3">
                   <label>Product Price (MRP)</label>
                   <input
                     onChange={(e) =>
@@ -264,8 +277,8 @@ function ProductUpdateStep2() {
                     className="form-control"
                   />
                 </div>
-                <div className="col-4 mb-3">
-                  <label>Discounted/Sale Price</label>
+                <div className="col-6 mb-3">
+                  <label>Discounted Price</label>
                   <input
                     onChange={(e) =>
                       setFormData({
@@ -277,16 +290,7 @@ function ProductUpdateStep2() {
                     className="form-control"
                   />
                 </div>
-                <div className="col-4 mb-3">
-                  <label>Offer Price</label>
-                  <input
-                    onChange={(e) =>
-                      setFormData({ ...formData, offerPrice: e.target.value })
-                    }
-                    value={formData?.offerPrice}
-                    className="form-control"
-                  />
-                </div>
+
                 <div className="col-6 mb-3">
                   <label>Ingredients</label>
                   <input
@@ -348,7 +352,7 @@ function ProductUpdateStep2() {
                   />
                 </div> */}
 
-                <div className="col-6 mb-3">
+                <div className="col-4 mb-3">
                   <label>Sale Start Date</label>
                   <input
                     type="date"
@@ -363,7 +367,7 @@ function ProductUpdateStep2() {
                   />
                 </div>
 
-                <div className="col-6 mb-3">
+                <div className="col-4 mb-3">
                   <label>Sale End Date</label>
                   <input
                     type="date"
@@ -371,6 +375,16 @@ function ProductUpdateStep2() {
                       setFormData({ ...formData, saleEndDate: e.target.value })
                     }
                     value={formData?.saleEndDate}
+                    className="form-control"
+                  />
+                </div>
+                <div className="col-4 mb-3">
+                  <label>Sale Price</label>
+                  <input
+                    onChange={(e) =>
+                      setFormData({ ...formData, offerPrice: e.target.value })
+                    }
+                    value={formData?.offerPrice}
                     className="form-control"
                   />
                 </div>

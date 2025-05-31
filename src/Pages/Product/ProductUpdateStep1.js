@@ -35,6 +35,7 @@ function ProductUpdateStep1() {
     hsnCode: "",
     GTIN: "",
     shortDescription: "",
+    productApperence:[]
   });
 
   const [tagOptions, setTagOptions] = useState([]);
@@ -101,6 +102,7 @@ function ProductUpdateStep1() {
           productType: product?.productType || "",
           tax: product?.tax || "",
           categoryId: product?.categoryId || [],
+          productApperence: product?.productApperence || [],
           hsnCode: product?.hsnCode || "",
           GTIN: product?.GTIN || "",
           shortDescription: product?.shortDescription || "",
@@ -135,6 +137,7 @@ function ProductUpdateStep1() {
           productType: "",
           tax: "",
           categoryId: [],
+          productApperence:[],
           hsnCode: "",
           GTIN: "",
           shortDescription: "",
@@ -240,7 +243,25 @@ function ProductUpdateStep1() {
                     options={taxOptions}
                   />
                 </div>
-
+<div className="col-6 mb-3">
+                  <label>Select Apperence</label>
+                  <Select
+                    isMulti
+                    options={[
+                      {label:"Best Seller", value:"Best Seller"},
+                      {label:"Latest", value:"Latest"},
+                      {label:"Popular", value:"Popular"}
+                    ]}
+                    onChange={(selectedOptions) =>
+                      setFormData({
+                        ...formData,
+                        productApperence: selectedOptions.map((option) => option.label), // only array of string IDs
+                      })
+                    }
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+                  />
+                </div>
                 <div className="col-6 mb-3">
                   <label>Category</label>
                   <Select
