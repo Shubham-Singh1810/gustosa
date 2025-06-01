@@ -40,6 +40,10 @@ import ComboProductUpdateStep2 from '../Pages/Product/ComboProduct/ComboProductU
 import ComboProductUpdateStep3 from '../Pages/Product/ComboProduct/ComboProductUpdateStep3';
 import BulkOrderList from '../Pages/Order/BulkOrderList';
 import UserList from '../Pages/User/UserList';
+import BlogList from '../Pages/Blog/BlogList';
+import AddBlog from '../Pages/Blog/AddBlog';
+import UpdateBlog from '../Pages/Blog/UpdateBlog';
+
 
 function AuthenticatedRoutes() {
   return (
@@ -122,6 +126,11 @@ function AuthenticatedRoutes() {
 
         {/* user routes */}
         <Route path="/user-list" element={<UserList/>}/>
+        {/* blog routes */}
+        <Route path="/blogs-list" element={<BlogList/>}/>
+        <Route path="/add-blog" element={<AddBlog/>}/>
+        <Route path="/update-blog/:id" element={<UpdateBlog/>}/>
+        
     </Routes>
   )
 }
